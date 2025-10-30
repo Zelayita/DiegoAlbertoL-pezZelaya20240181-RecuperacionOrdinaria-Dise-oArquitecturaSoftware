@@ -6,13 +6,11 @@ EndPoint Completo seria este https://retoolapi.dev/VYcY2B/RecuperacionZelaya2024
 
 Asi vienen los datos del Endpoint
 "id": 1,
-    "stockProducto": 20231,
-    "nombreProducto": "Iolande Helgass",
-    "precioProducto": 55508,
-    "categoriaProducto": "Aigneis Coton",
-    "descripcionProducto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-
+    "stockProducto": "45",
+    "nombreProducto": "Monitor Curvo 27\" 4K",
+    "precioProducto": "399.99",
+    "categoriaProducto": "Electrónica",
+    "descripcionProducto": "Pantalla con alta tasa de refresco, ideal para diseño y juegos."
 */ 
 
 

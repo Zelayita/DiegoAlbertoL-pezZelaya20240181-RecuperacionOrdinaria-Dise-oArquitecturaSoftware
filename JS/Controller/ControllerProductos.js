@@ -5,11 +5,7 @@ import{
     deleteProduct
 } from '../Services/ServiceProductos.js'
 
-
-/*
-ZELAYA OCUPAR SWEETCGARM PARA CADA VEZ QUE SE HAGA POST O PUT O DELETE.
-*/ 
-
+ 
 //Primero lo Primero
 document.addEventListener('DOMContentLoaded', ()=>{
     const tableBody = document.querySelector('#ProductTable tbody');
@@ -49,8 +45,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 await createProduct(data);
             }
 
-            modal.hide(); //se oculta el formulario despues de agregar/actualizar
-            await CargarProductos(); //nos permite cargar las categorias
+            modal.hide(); //se oculta el Form despues de que se realize lo anterior
+            await CargarProductos();
         }
         catch(err){
             console.error("Error: ", err);
@@ -62,15 +58,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
      async function CargarProductos(){
 
         try{
-            const categories = await getProduct();
+            const Productos = await getProduct();
             tableBody.innerHTML = ""; //vaciamos la tabla
 
-            if(!categories || categories.lenght == 0){
+            if(!Productos || Productos.lenght == 0){
                 tableBody.innerHTML = '<td colspan="5"> Actualmente no hay registros</td>';
                 return; //evitamos que se ejecute el reso del codigo
             }
 
-            categories.forEach((Zelaya)=>{
+            Productos.forEach((Zelaya)=>{
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
                     <td>${Zelaya.id}</td>
