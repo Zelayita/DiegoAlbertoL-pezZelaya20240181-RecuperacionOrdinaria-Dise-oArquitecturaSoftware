@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Zelaya</title>
+        <!--Imagen de Favicon para la Pestaña-->
+    <link rel="icon" type="image/png" href="IMG/Logo.png">
+    <!-- codigo de Bootstrap creo que se escribe asi-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"/>
+    <!--Mas cosas de Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <!--Y el Style de css que lo tengo en las carpeta css-->
+    <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+    <!--navBar Zelaya-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
+    <div class="container">
+        <!--Una Imagen como Logo-->
+        <a class="navbar-brand" href="index.html">
+            <img src="IMG/Logo.png" alt="Logo Zelaya" class="img-fluid" style="height: 40px; width: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainZelayaNav"
+            aria-controls="mainZelayaNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainZelayaNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Productos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!--Contenedor que contiene la tabla Zelaya-->
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h4">Lista de Productos</h2>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ProductModal" id="btnAddProduct">
+                <i class="bi bi-plus-lg me-1"></i> Agregar Productos
+            </button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle" id="ProductTable">
+                <thead class="table-primary">
+                    <tr>
+                        <th>ID</th>
+                        <th>Stock</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Categoria</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td colspan="5">Actualmente no hay registros</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Modal Crear/Editar Producto Zelaya -->
+    <div class="modal fade" id="ProductModal" tabindex="-1" aria-labelledby="ProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="ProductModalLabel">Agregar Productos-Zelaya</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <form id="productForm">
+                    <input type="hidden" id="idProduct"/>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="ProductStock" class="form-label">Stock del Producto <span style="color:red">*</span></label>
+                            <input type="number" min="1" step="1" class="form-control" id="ProductStock"
+                                placeholder="10" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ProductName" class="form-label">Nombre del Producto <span
+                                    style="color:red">*</span></label>
+                           <input type="text" class="form-control" id="ProductName"
+                                placeholder="Mosues, Laptops, tablets, etc" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ProductPrice" class="form-label">Precio del Producto <span
+                                    style="color:red">*</span></label>
+                           <input type="number" min="0.01" class="form-control" step="0.01" id="ProductPrice"
+                                placeholder="10.99" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ProductCategory" class="form-label">Categoria del Producto <span
+                                    style="color:red">*</span></label>
+                           <input type="text" class="form-control" id="ProductCategory"
+                                placeholder="Electronicos, Informaticos, Medicos, etc" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ProductDescription" class="form-label">Descripcion del Producto<span
+                                    style="color:red">*</span></label>
+                            <textarea id="ProductDescription" class="form-control" required></textarea>        
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn btn-success" id="saveProduct">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+
+
+    <footer class="bg-dark text-white pt-4 pb-2 mt-5">
+    <div class="container text-center">
+        <hr class="mb-3">
+        <p class="mb-1">
+            &copy; 2025 Productos-Diego Alberto López Zelaya 20240181. Todos los derechos reservados.
+        </p>
+        <p class="small text-warning">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i>
+            Ingeniero, se debe ejecutar por medio de Live Server, porque da errores en file://.
+        </p>
+    </div>
+    <section class="container mt-5 mb-5 text-center">
+    <p class="lead">
+        Quiero expresar un sincero agradecimiento a mis Profesores. Ing.Ricardo de Paz, y Ing. Josue Guinea, cuyo compromiso y dedicación fueron fundamentales para despertar mi pasión por el desarrollo web y proporcionarme las bases necesarias para construir esta aplicación. Su conocimiento y guía han sido invaluables en este proyecto. ¡Muchas gracias por todo!
+        <br>
+        Aparte de eso quiero agradecerles, por su gran compromiso para que yo aprendiera 👌❤️
+    </p>
+</section>
+</footer>
+
+    <!-- JS Bootstrap bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="JS/Controller/ControllerProductos.js"></script>
+</body>
+</html>
