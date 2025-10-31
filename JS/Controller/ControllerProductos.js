@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             if(!Productos || Productos.lenght == 0){
                 tableBody.innerHTML = '<td colspan="5"> Actualmente no hay registros</td>';
-                return; //evitamos que se ejecute el reso del codigo
+                return;
             }
 
             Productos.forEach((Zelaya)=>{
