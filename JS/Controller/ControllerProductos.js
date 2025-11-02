@@ -110,20 +110,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     modal.show();
                 });
 
-                //botones de Eliminar eliminar
+                //botones de Eliminar Productos
                 tr.querySelector(".delete-btn").addEventListener('click', () =>{
-                    if(confirm("¿Desea eliminar esta categoria?")){
+                    if(confirm("¿Desea eliminar esta Producto?")){
                         deleteProduct(Zelaya.id).then(CargarProductos);
                     }
                 });
 
-                tableBody.appendChild(tr); //al tbody se le concatena la nueva fila creada
+                tableBody.appendChild(tr); //al tbody se le asigna tr que es la  nueva fila creada
 
             });
         }
 
         catch(err){
-            console.error("Error cargando categorias: ", err);
+            console.error("Error cargando Productos: ", err);
         }
         
     }
